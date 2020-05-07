@@ -19,26 +19,223 @@
     <main id="main-doc">
         <section class="main-section" id="intro">
             <header>Introduction</header>
+            <article>
+                <p>Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but
+                effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its
+                interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most
+                platforms.</p>
+
+                <p>
+                    The Python interpreter and the extensive standard library are freely available in source or binary form for all major
+                    platforms from the Python Web site, <a target="_blank" href="https://www.python.org" class="p-link">https://www.python.org/</a>, and may be freely distributed. The same site also contains
+                    distributions of and pointers to many free third party Python modules, programs and tools, and additional documentation.
+                </p>
+
+                <p>
+                    The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages
+                    callable from C). Python is also suitable as an extension language for customizable applications.
+                </p>
+
+                <ul class="first-list">
+                    Disclaimer: This is not full documentation. This is a project I (Kritik Kaushal) did to get better at webdev. What you'll learn from this website is:
+                    <li>
+                        Basic Information about Python
+                    </li>
+                    <li>
+                        Introductory Code Samples
+                    </li>
+                    <li>
+                        Some Data Structures
+                    </li>
+                </ul>
+            </article>
         </section>
 
         <section class="main-section" id="nsl">
-            <header>Numbers, Strings, Lists</header>
+            <header>Numbers, Strings, and Lists</header>
+            <article>
+                <p>
+                    The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression
+                    syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or
+                    C); parentheses (()) can be used for grouping. For example:
+                </p>
+
+                <code>>>> 2 + 2
+                    4
+                    >>> 50 - 5*6
+                    20
+                    >>> (50 - 5*6) / 4
+                    5.0
+                    >>> 8 / 5 # division always returns a floating point number
+                    1.6
+                </code>
+            </article>
+            <article>
+                <p>
+                    Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in
+                    single quotes ('...') or double quotes ("...") with the same result 2. \ can be used to escape quotes:
+                </p>
+                <code>>>> 'spam eggs' # single quotes
+                    'spam eggs'
+                    >>> 'doesn\'t' # use \' to escape the single quote...
+                    "doesn't"
+                    >>> "doesn't" # ...or use double quotes instead
+                    "doesn't"
+                    >>> '"Yes," they said.'
+                    '"Yes," they said.'
+                    >>> "\"Yes,\" they said."
+                    '"Yes," they said.'
+                    >>> '"Isn\'t," they said.'
+                    '"Isn\'t," they said.'
+                </code>
+            </article>
+            <article>
+                <p>
+                    Python knows a number of compound data types, used to group together other values. The most versatile is the list, which
+                    can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of
+                    different types, but usually the items all have the same type.
+                </p>
+                <code>>>> squares = [1, 4, 9, 16, 25]
+                    >>> squares
+                    [1, 4, 9, 16, 25]
+                </code>
+            </article>
         </section>
 
         <section class="main-section" id="control">
             <header>Control Flow</header>
+            <article>
+                <p>
+                    The main control flow tools available in Python are:
+                </p>
+                <ul class="first-list">
+                    <li>while loops</li>
+                    <li>if statements</li>
+                    <li>for statements</li>
+                </ul>
+                <p>Perhaps the most well-known statement type is the if statement. For example:</p>
+                <code>>>> x = int(input("Please enter an integer: "))
+                    Please enter an integer: 42
+                    >>> if x < 0: ... x=0 ... print('Negative changed to zero') ... elif x==0: ... print('Zero') ... elif x==1: ...
+                        print('Single') ... else: ... print('More') ... More
+                </code>
+                <p>
+                    There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’ is short for ‘else if’, and is
+                    useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the switch or case statements
+                    found in other languages.
+                </p>
+                <p>
+                    The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over
+                    an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step
+                    and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in
+                    the order that they appear in the sequence. For example (no pun intended):
+                </p>
+                <code>>>> # Measure some strings:
+                    ... words = ['cat', 'window', 'defenestrate']
+                    >>> for w in words:
+                    ... print(w, len(w))
+                    ...
+                    cat 3
+                    window 6
+                    defenestrate 12
+                </code>
+                <p>Control Flow is used for ordering:</p>
+                <ul class="first-list">
+                    <li>Function Calls</li>
+                    <li>Instructions</li>
+                    <li>Statements</li>
+                </ul>
+            </article>
         </section>
 
         <section class="main-section" id="ds">
             <header>Data Structures</header>
+            <article>
+                <ul class="first-list">Structures discussed in this chapter will be:
+                    <li>Stacks</li>
+                    <li>Queues</li>
+                </ul>
+                <p>Both will be represented using lists.</p>
+                <p>The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved
+                (“last-in, first-out”). To add an item to the top of the stack, use append(). To retrieve an item from the top of the
+                stack, use pop() without an explicit index. For example</p>
+                <code>>>> stack = [3, 4, 5]
+                    >>> stack.append(6)
+                    >>> stack.append(7)
+                    >>> stack
+                    [3, 4, 5, 6, 7]
+                    >>> stack.pop()
+                    7
+                    >>> stack
+                    [3, 4, 5, 6]
+                    >>> stack.pop()
+                    6
+                    >>> stack.pop()
+                    5
+                    >>> stack
+                    [3, 4]
+                </code>
+                <p>
+                    It is also possible to use a list as a queue, where the first element added is the first element retrieved (“first-in,
+                    first-out”); however, lists are not efficient for this purpose. While appends and pops from the end of list are fast,
+                    doing inserts or pops from the beginning of a list is slow (because all of the other elements have to be shifted by
+                    one).
+                    
+                    To implement a queue, use collections.deque which was designed to have fast appends and pops from both ends. For
+                    example:
+                </p>
+                <code>>>> from collections import deque
+                    >>> queue = deque(["Eric", "John", "Michael"])
+                    >>> queue.append("Terry") # Terry arrives
+                    >>> queue.append("Graham") # Graham arrives
+                    >>> queue.popleft() # The first to arrive now leaves
+                    'Eric'
+                    >>> queue.popleft() # The second to arrive now leaves
+                    'John'
+                    >>> queue # Remaining queue in order of arrival
+                    deque(['Michael', 'Terry', 'Graham'])
+                </code>
+            </article>
         </section>
 
         <section class="main-section" id="modules">
             <header>Modules</header>
+            <article>
+            <ul class="first-list">
+                Lorem Ipsum List
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+            </ul>
+            <p>
+                If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are
+                lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the
+                input for the interpreter and running it with that file as input instead. This is known as creating a script. As your
+                program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a
+                handy function that you’ve written in several programs without copying its definition into each program.
+                <br><br>
+                To support this, Python has a way to put definitions in a file and use them in a script or in an interactive instance of
+                the interpreter. Such a file is called a module; definitions from a module can be imported into other modules or into
+                the main module (the collection of variables that you have access to in a script executed at the top level and in
+                calculator mode).
+                <br><br>
+                A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py
+                appended. Within a module, the module’s name (as a string) is available as the value of the global variable __name__.
+                For instance, use your favorite text editor to create a file called fibo.py in the current directory with the following
+                contents:
+            </p>
+            <code># Fibonacci numbers module
+                
+                def fib(n): # write Fibonacci series up to n
+                a, b = 0, 1
+                while a < n: print(a, end=' ' ) a, b=b, a+b print() def fib2(n): # return Fibonacci series up to n result=[] a, b=0, 1
+                    while a < n: result.append(a) a, b=b, a+b return result
+            </code>
+            </article>
         </section>
 
         <section class="main-section" id="reference">
             <header>References</header>
+            <p>For for info, please visit: <a class="p-link" href="https://docs.python.org/3/contents.html">https://docs.python.org/3/contents.html</a></p>
         </section>
     </main>
 <body>

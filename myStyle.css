@@ -1,7 +1,6 @@
 body {
   min-width: 290px;
-  color: #4d4e53;
-  background-color: #fbfbfb;
+  background-color: #030c30;
   font-family: monospace;
   line-height: 1.5;
 }
@@ -14,11 +13,11 @@ body {
     width: 300px;
     height: 100%;
     border-right: solid;
-    border-color: cornflowerblue;
+    border-color: orange;
 }
 
 header {
-    color: rgb(29, 88, 15);
+    color: rgb(44, 145, 19);
     text-align: center;
     margin: 10px;
     font-size: 28px;
@@ -33,7 +32,7 @@ nav > ul {
 }
 
 nav > ul > li {
-    color: #4d4e53;
+    color: #f6f4f4;
     position: relative;
     border-top: 1px solid;
     text-align: center;
@@ -45,19 +44,14 @@ nav > ul > li {
     display: block;
     text-decoration: none;
     cursor: pointer;
-    color: black;
+    color: #f6f4f4;
     font-size: 18px;
 }
 
 .nav-link:hover {
     color: white;
-    background-color: rgb(10, 63, 9);
+    background-color: rgb(14, 88, 12);
 }
-
-/*.active {
-    color: white;
-    background-color: rgb(10, 63, 9);
-}*/
 
 #main-doc {
   position: absolute;
@@ -67,10 +61,47 @@ nav > ul > li {
 }
 
 #main-doc header{
-    color: black;
+    color: #f6f4f4;
     text-align: left;
     margin: 0px;
     box-shadow: none;
     font-size: 30px;
     font-weight: lighter;
+}
+
+p {
+    font-size: 14px;
+    color: #f6f4f4;
+}
+
+.p-link {
+    color: orange;
+}
+
+.first-list {
+    color: #f6f4f4;
+}
+
+section > header {
+    text-decoration: underline;
+}
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 400px) {
+    #main-doc {
+        margin-left: -10px;
+    }
 }
